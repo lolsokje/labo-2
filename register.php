@@ -8,6 +8,11 @@ session_start();
 	<title>Registreer</title>
 </head>
 <body>
+<?php 
+if(isset($_SESSION['user'])) {
+	echo "Je bent al ingelogd, je hoort niet op deze pagina te kijken";
+	header("refresh:5;url=index.php");
+} else { ?>
 	<form action="action.php" method="post">
 		<label for="username">Gebruikersnaam</label>
 		<input type="text" id="username" name="username">
@@ -23,5 +28,6 @@ session_start();
 
 		<input type="submit" value="Register">
 	</form>
+<?php } ?>
 </body>
 </html>

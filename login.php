@@ -8,6 +8,11 @@ session_start();
 	<title>Login</title>
 </head>
 <body>
+<?php 
+if(isset($_SESSION['user'])) {
+	echo "Je bent al ingelogd, je hoort niet op deze pagina te kijken";
+	header("refresh:5;url=index.php");
+} else { ?>
 	<form action="action.php" method="post">
 		<label for="username">Gebruikersnaam</label>
 		<input type="text" name="username" id="username">
@@ -19,5 +24,6 @@ session_start();
 		<br>
 		<input type="submit" value="Submit">
 	</form>
+<?php } ?>
 </body>
 </html>
