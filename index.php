@@ -39,7 +39,7 @@ $results;
 		foreach($results as $result) {
 			?>
 			<h2><?php echo $result["titel"];?></h2>
-			<h5>Geschreven door <?php echo $result["author"];?></h5>
+			<h5>Geschreven door <?php echo $result["author"];?> op <?php echo $result["time"];?></h5>
 			<p><?php echo $result["text"];?></p>
 			<?php
 		}

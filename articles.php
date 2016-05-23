@@ -15,7 +15,7 @@ if(!isset($_SESSION['user'])) {
 			echo "Een van de velden is leeg, probeer het a.u.b. opnieuw";
 			header("refresh:5;url=add_article.php");
 		} else {
-			$query = mysqli_query($con, "INSERT INTO articles (titel, text, author, private) VALUES ('$title', '$text', '$author', '$private');");
+			$query = mysqli_query($con, "INSERT INTO articles (titel, text, author, time, private) VALUES ('$title', '$text', '$author', NOW(), '$private');");
 			echo "Artikel succesvol toegevoegd";
 			header("refresh:2;url=index.php");
 		}
